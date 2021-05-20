@@ -1,5 +1,5 @@
 # MC_GPU
-GPU parallel Monte Carlo code for patchy particles
+GPU parallel Monte Carlo code for patchy particles with the model potential described in D.tracey,E.G. Noya, and J.P.K. Doye, The Journal of chemical physics 151, 224506 (2019).
 
 
 Instructions for compilation:
