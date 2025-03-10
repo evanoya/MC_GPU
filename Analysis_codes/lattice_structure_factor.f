@@ -46,7 +46,7 @@ c
           enddo
         enddo
 
-        open(33,file='coords.dat')
+        open(33,file='conf-core.xyz')
         open(89,file='Sq-block.dat')
         read(*,*) nsnapshots,nblock
         print*, 'nsapshots',nsnapshots
