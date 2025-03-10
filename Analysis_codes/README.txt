@@ -27,5 +27,9 @@ state, and centred at the center of mass of the largest cluster in the first fra
 * histo-vec1.dat. 1st column is coordination number, 2nd column is fraction of particles
   in the solid cluster with that coordination.
 * rhoR_av.dat. Radial density averaged over all trajectory (1st column is radial distance, 2nd column is radial density).
+* conf-core.xyz. Trayectory containing only those particles belong to the inner core of the solid cluster
+(the radius of the sphere defining the core is provided by the user in the file in-cluster.d)
+* conf-core-patch.xyz. The same as conf-core.xyz, but including the positions of the patches for each particle besides 
+the position of the center of mass.
 
 2. 
