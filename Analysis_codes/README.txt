@@ -32,4 +32,15 @@ state, and centred at the center of mass of the largest cluster in the first fra
 * conf-core-patch.xyz. The same as conf-core.xyz, but including the positions of the patches for each particle besides 
 the position of the center of mass.
 
-2. 
+2.  Name of the source file: BOOD_bond.f 
+
+What it does: It calculates the Bond Orientational Order Diagram, by using an energy criterium to define bonds
+(two particles are considered bonded if the energy is lower than -0.2epsilon).
+
+How to compile: ifort -O3 -132 -o BOOD_bond.x BOOD_bond. 
+
+Files needed to run cluster_analysis.x: in-BOOD.d and conf-core-patch.xyz 
+
+Output files:BOOD-Lambert-av.dat    It contains the Lambert projection of the BOOD. 1st column is x coordinate,
+2nd column is y coordinate, 3rd column is probability density of finding a bond with that orientation.
+
