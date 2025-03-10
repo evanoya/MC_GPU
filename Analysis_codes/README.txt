@@ -39,20 +39,36 @@ What it does: It calculates the Bond Orientational Order Diagram, by using an en
 
 How to compile: ifort -O3 -132 -o BOOD_bond.x BOOD_bond.f 
 
-Files needed to run cluster_analysis.x: in-BOOD.d and conf-core-patch.xyz 
+Files needed to run BOOD_bond.x: in-BOOD.d and conf-core-patch.xyz 
 
 Output files:BOOD-Lambert-av.dat    It contains the Lambert projection of the BOOD. 1st column is x coordinate,
 2nd column is y coordinate, 3rd column is probability density of finding a bond with that orientation.
 
 3.  Name of the source file: lattice_structure_factor.f
 
-What it does: It calculate the diffration pattern projectd on the plane z=0.
+What it does: It calculates the diffration pattern projectd on the plane z=0.
 
 How to compile: ifort -O3 -132 -o lattice_structure_factor.x lattice_structure_factor.f
 
-Files needed to run cluster_analysis.x: in-pattern.d and conf-core.xyz 
+Files needed to run lattice_structure_factor.x: in-pattern.d and conf-core.xyz 
 
 Output files: Sq-av.dat    It contains the diffraction pattern projecte on the z=0 plane. 1st column is x coordinate,
 2nd column is y coordinate, 3rd column is the structure factor.
 
-4. 
+4.  Name of the source file: lifting3.f
+
+What it does: It performs the lifting to 6D.
+
+How to compile: ifort -O3 -132 -o lifting3.x lifting3.f
+
+Files needed to run lifting3.x: in-lift.d, bonds.xyz and coords.xyz. The file bonds.xyz contains the matching between bonds 
+in 3D and bonds in the 6D lattice. coords.xyz it contains the 3D structure that will be lifted. It must be oriented so 
+that 2-fold rotational axes are aligned with x-, y-, and z-. Three angles can be provided in in-lift.d to perform rotations
+about x-, y- and z- axes, to get the proper orientation of the structure for lifting.
+
+Output files:  histo_dpar_dperp_pairs.dat. The 1st column is distance in parallel space and the second column is average distance 
+between pairs of particles in perp space, i.e. data needed to plot phason strain. 
+coords-lifted.xyz It contains the configuration but where particles are labelled according to lifting results:
+A means that the particle has been correctly lifted, M are those particles with are misaligned with respect to the bonds
+in bonds.xyz tile, I means that particle does not have neighbours (isolated particle), C menas that there are conflicting
+assignment for that particle.
