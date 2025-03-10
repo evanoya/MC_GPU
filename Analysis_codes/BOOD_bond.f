@@ -121,7 +121,7 @@
         xnOO_av=0.d0
         xnIO_av=0.d0
         
-        open(20,file='coords.dat')
+        open(20,file='conf-core-patch.xyz')
         open(44,file='BondType.dat')
         !open(21,file='coords-rotated.xyz')
         lx=2000.
