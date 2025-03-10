@@ -37,10 +37,22 @@ the position of the center of mass.
 What it does: It calculates the Bond Orientational Order Diagram, by using an energy criterium to define bonds
 (two particles are considered bonded if the energy is lower than -0.2epsilon).
 
-How to compile: ifort -O3 -132 -o BOOD_bond.x BOOD_bond. 
+How to compile: ifort -O3 -132 -o BOOD_bond.x BOOD_bond.f 
 
 Files needed to run cluster_analysis.x: in-BOOD.d and conf-core-patch.xyz 
 
 Output files:BOOD-Lambert-av.dat    It contains the Lambert projection of the BOOD. 1st column is x coordinate,
 2nd column is y coordinate, 3rd column is probability density of finding a bond with that orientation.
 
+3.  Name of the source file: lattice_structure_factor.f
+
+What it does: It calculate the diffration pattern projectd on the plane z=0.
+
+How to compile: ifort -O3 -132 -o lattice_structure_factor.x lattice_structure_factor.f
+
+Files needed to run cluster_analysis.x: in-pattern.d and conf-core.xyz 
+
+Output files: Sq-av.dat    It contains the diffraction pattern projecte on the z=0 plane. 1st column is x coordinate,
+2nd column is y coordinate, 3rd column is the structure factor.
+
+4. 
